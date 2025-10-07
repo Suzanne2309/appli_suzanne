@@ -20,4 +20,4 @@ if(isset($_POST['submit'])){ //SI les données ajouté avec le bouton submit son
 
 }
 
-header("Location:index.php"); //la fonction header 
+header("Location:index.php"); //la fonction header va permettre de renvoyer vers un nouveau en-tête lorsque le client remplis et envoie les réponses de formulaire
