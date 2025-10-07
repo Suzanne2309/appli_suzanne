@@ -15,9 +15,21 @@ if(isset($_POST['submit'])){ //SI les données ajouté avec le bouton submit son
             "total" => $price*$qtt, //On ajouter le total avec le calcul correspondant
         ];
 
-        $_SESSION['products'][] = $product; //On va pouvoir stocker le tableau product vide dans la session, et quand des données sont envoyés et traité par les filtres, alors on remplira le teableau de la session
+        $_SESSION['products'][] = $product; //On va pouvoir stocker le tableau product vide dans la session, et quand des données sont envoyés et traité par les filtres, alors on remplira le teableau de la session ainsi les produits ajouté sont stocké dans la session
     }
-
 }
+
+/*
+if(isset($_GET['action'])){
+    switch($_GET['action']){
+        case "delete":
+            unset($_SESSION[$product]);
+            break;
+        case "clear":
+            unset($_SESSION['products']);
+            break;
+    }
+}
+*/
 
 header("Location:index.php"); //la fonction header va permettre de renvoyer vers un nouveau en-tête lorsque le client remplis et envoie les réponses de formulaire

@@ -1,0 +1,100 @@
+/************************************** Général ************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/************************************** Body ************************************************/
+body {
+    background: #c7e3eb;
+    background: linear-gradient(90deg, rgba(199, 227, 235, 1) 0%, rgba(242, 213, 242, 1) 70%, rgba(255, 229, 186, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/************************************** Header ************************************************/
+header {
+    width: 100%;
+}
+
+nav {
+    background-color: #ebfffe;
+    width: 100%;
+    padding: 2em;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    font-size: 3.2em;
+    text-decoration: none;
+}
+
+/************************************** Formulaire ************************************************/
+main {
+    width: 100%;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #ebfffe;
+    padding: 0.3em 2em 2em 2em;
+    width: 40%;
+    border: 0.5em solid #ebfffe;
+    border-radius: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    padding: 0.5em;
+    font-size: 2em;
+}
+
+form {
+    background-color: #fff;
+    width: 60%;
+    padding: 1em;
+    border: 0.1em solid #fff;
+    border-radius: 5%;
+    box-shadow: rgba(100, 100, 111, 0.2) 1px 3px 10px 4px;
+}
+
+p {
+    padding: 0.4em;
+    color: #333;
+}
+
+.submit {
+    background-color: #edddf0;
+    padding: 0.5em;
+    border: 0.3em solid #edddf0;
+    border-radius: 6%;
+}
+
+/************************************** Formulaire ************************************************/
+.totalProducts p {
+    padding: 1em;
+    color: #333;
+    font-size: 2em;
+}

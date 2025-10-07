@@ -1,0 +1,66 @@
+/************************************** Général ************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/************************************** Body ************************************************/
+body {
+    background: #c7e3eb;
+    background: linear-gradient(90deg, rgba(199, 227, 235, 1) 0%, rgba(242, 213, 242, 1) 70%, rgba(255, 229, 186, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/************************************** Header ************************************************/
+header {
+    width: 100%;
+}
+
+nav {
+    background-color: #ebfffe;
+    width: 100%;
+    padding: 2em;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    font-size: 3.2em;
+    text-decoration: none;
+}
+
+/************************************** Tableau ************************************************/
+main {
+    width: 100%;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    padding: 1em;
+    background-color: #fff;
+    border: 0.2em solid #fff;
+    border-radius: 5%;
+}
+
+tr, td {
+    padding: 0.5em;
+}
+
