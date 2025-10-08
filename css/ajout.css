@@ -47,6 +47,7 @@ li .basket_tt {
     font-size: 2em;
     font-weight: 600;
     color: #333;
+    text-align: center;
 }
 
 li .basket_tt path {

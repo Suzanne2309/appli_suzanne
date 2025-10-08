@@ -36,7 +36,7 @@
                             "<th>Id</th>",
                             "<th>Nom</th>",
                             "<th>Prix</th>",
-                            "<th>Quantité</th>",
+                            "<th colspan=3>Quantité</th>",
                             "<th>Total</th>",
                         "</tr>",
                     "</thead>",

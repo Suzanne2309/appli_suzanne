@@ -44,9 +44,11 @@ a {
 }
 
 li .basket_tt {
+    width: 1em;
     font-size: 2em;
     font-weight: 600;
     color: #333;
+    text-align: center;
 }
 
 li .basket_tt path {
@@ -64,14 +66,24 @@ main {
 }
 
 table {
+    width: 55%;
     padding: 1em;
     background-color: #fff;
     border: 0.2em solid #fff;
     border-radius: 5%;
 }
 
-tr, td {
+tr {
     padding: 0.5em;
+}
+
+th {
+    font-size: 1.5em;
+}
+
+td {
+    font-size: 1.2em;
+    text-align: center;
 }
 
 a {
