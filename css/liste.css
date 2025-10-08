@@ -39,8 +39,18 @@ li {
 
 a {
     color: #333;
-    font-size: 3.2em;
+    font-size: 2em;
     text-decoration: none;
+}
+
+li .basket_tt {
+    font-size: 2em;
+    font-weight: 600;
+    color: #333;
+}
+
+li .basket_tt path {
+    fill: #333;
 }
 
 /************************************** Tableau ************************************************/
@@ -64,9 +74,6 @@ tr, td {
     padding: 0.5em;
 }
 
-/************************************** Formulaire ************************************************/
-.totalProducts p {
-    padding: 1em;
-    color: #333;
-    font-size: 2em;
+a {
+    width: 2em;
 }

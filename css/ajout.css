@@ -43,6 +43,16 @@ a {
     text-decoration: none;
 }
 
+li .basket_tt {
+    font-size: 2em;
+    font-weight: 600;
+    color: #333;
+}
+
+li .basket_tt path {
+    fill: #333;
+}
+
 /************************************** Formulaire ************************************************/
 main {
     width: 100%;

@@ -3,6 +3,7 @@ session_start(); //On fait appel à une fonction précise et prédéfinis pour d
 
 function delete(){
     if(isset($_SESSION['products'])) unset($_SESSION['products'][$_GET['id']]);
+    $_SESSION['message'] = "Produit supprimé avec succès.";
 }
 
 function clear() {
@@ -57,10 +58,12 @@ if(isset($_GET['action'])){
         case "delete":
             delete();
             header("Location:recap.php");
+            exit();
             break;
         case "clear":
             clear();
             header("Location:recap.php");
+            exit();
             break;
         case "qtt-up":
             qttUp();
