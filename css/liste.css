@@ -64,3 +64,9 @@ tr, td {
     padding: 0.5em;
 }
 
+/************************************** Formulaire ************************************************/
+.totalProducts p {
+    padding: 1em;
+    color: #333;
+    font-size: 2em;
+}

@@ -45,7 +45,7 @@
                                 "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>", // on fait appel à une fonction prédéfinie number_format qui va permettre d'adapter le format du prix (on appele la [valeur prix] de $product) à arroundir à 2 chiffres après la décimale qui sera séparé par ',' et on permet l'affichage de l'unité "€"
                                 "<td>".$product['qtt']."</td>",
                                 "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                                "<td><button>X</button></td>", //On crée un boutton de suppression qui sera donc crée pour chaque produit (pour delete un product unique)
+                                "<td><a href='traitement.php?action=delete&id=" . $index . "'>X</a></td>", //On crée un boutton de suppression qui sera donc crée pour chaque produit (pour delete un product unique)
                             "</tr>";
                             $totalGeneral+= $product['total']; //Le totalGeneral va augmenter à chaque total qui sera crée pour le nouveau $product ajouté
                     }
@@ -57,6 +57,7 @@
                     "</table>";
 
         }
+        
     ?>
 
     <div class="totalProducts">
