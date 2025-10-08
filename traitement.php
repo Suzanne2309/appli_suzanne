@@ -1,6 +1,25 @@
 <?php
 session_start(); //On fait appel à une fonction précise et prédéfinis pour démarrer la session. Cela permet aussi d'enregistrer les ajouts sur le serveur.
 
+function delete(){
+    if(isset($_SESSION['products'])) unset($_SESSION['products'][$_GET['id']]);
+}
+
+function clear() {
+    if(isset($_SESSION['products'])) unset($_SESSION['products']);
+}
+
+function qttUp() {
+    if(isset($_SESSION['products'])) $_SESSION['products'][$_GET['id']]['qtt']++;
+    ($_SESSION['products'][$_GET['id']]['total'] = $_SESSION['products'][$_GET['id']]['price'] * $_SESSION['products'][$_GET['id']]['qtt']);
+}
+
+function qttDown() {
+    if(isset($_SESSION['products'])) $_SESSION['products'][$_GET['id']]['qtt']--;
+    ($_SESSION['products'][$_GET['id']]['total'] = $_SESSION['products'][$_GET['id']]['price'] * $_SESSION['products'][$_GET['id']]['qtt']);
+}
+
+
 if(isset($_POST['submit'])){ //SI les données ajouté avec le bouton submit sont différents de null
     //ALORS elles sont filtré pour s'assurer que la variable soit pas faussée (malveillance, faute de frappe,...) avec filter_input
     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //filter sanitize permet de "nettoyer" les données en retirant les balises html et d'encoder les charactères qui sont en dehors des normes ASCII (full special chars) 
@@ -13,7 +32,6 @@ if(isset($_POST['submit'])){ //SI les données ajouté avec le bouton submit son
             "price" => $price,
             "qtt" => $qtt,
             "total" => $price*$qtt, //On définit le calcul pour la clé total
-            //"ttQtt" => 
         ];
 
         $_SESSION['products'][] = $product; //On va pouvoir stocker le tableau product vide dans la session, et quand des données sont envoyés et traité par les filtres, alors on remplira le teableau de la session ainsi les produits ajouté sont stocké dans la session
@@ -33,22 +51,23 @@ if(isset($_POST['submit'])){ //SI les données ajouté avec le bouton submit son
         }
 */
 
+
 if(isset($_GET['action'])){
     switch($_GET['action']){
         case "delete":
-            if(isset($_SESSION['products'])) unset($_SESSION['products'][$_GET['id']]);
+            delete();
             header("Location:recap.php");
-            exit();
+            break;
         case "clear":
-            if(isset($_SESSION['products'])) unset($_SESSION['products']);
+            clear();
             header("Location:recap.php");
-            exit();
+            break;
         case "qtt-up":
-            if(isset($_SESSION['products'])) $_SESSION['products'][$_GET['id']][$qtt]++;
+            qttUp();
             header("Location:recap.php");
             exit();
         case "qtt-down":
-            if(isset($_SESSION['products']))$_SESSION['products'][$_GET['id']][$qtt]--;
+            qttDown();
             header("Location:recap.php");
             exit();
     }

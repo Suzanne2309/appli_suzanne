@@ -21,7 +21,7 @@
     </header>
 
     <main>
-    <?php 
+    <?php
         if(!isset($_SESSION['products']) || empty($_SESSION['products'])){ //On va donner la priorité à !isset, donc s'il n'y a pas encore de session demmarré OU que l'a session est vide
             echo "<p>Aucun produit en session...</p>"; //ALORS on afffihce le message
         }
@@ -60,7 +60,6 @@
                     "</table>";
 
         }
-    var_dump($_SESSION['products']);
     ?>
 
     <div class="totalProducts">
