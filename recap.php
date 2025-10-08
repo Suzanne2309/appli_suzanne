@@ -43,7 +43,9 @@
                                 "<td>".$index."</td>",
                                 "<td>".$product['name']."</td>",
                                 "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>", // on fait appel à une fonction prédéfinie number_format qui va permettre d'adapter le format du prix (on appele la [valeur prix] de $product) à arroundir à 2 chiffres après la décimale qui sera séparé par ',' et on permet l'affichage de l'unité "€"
+                                "<td><a href='traitement.php?action=qtt-up&id=" . $index . "'>+</a></td>",
                                 "<td>".$product['qtt']."</td>",
+                                "<td><a href='traitement.php?action=qtt-down&id=" . $index . "'>-</a></td>",
                                 "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                 "<td><a href='traitement.php?action=delete&id=" . $index . "'>X</a></td>", //On crée un boutton de suppression qui sera donc crée pour chaque produit (pour delete un product unique)
                             "</tr>";
@@ -51,13 +53,14 @@
                     }
                     echo "<tr>",
                             "<td colspan=4>Total général : </td>", // colspan=4 donc la case Total général : va prendre 4 case de column sur sa ligne (row) donc on fait fussionner les 4 case sur 6
-                            "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</td>", 
+                            "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            "<td><a href='traitement.php?action=clear'>C</a></td>",
                          "</tr>",
                     "</tbody>",
                     "</table>";
 
         }
-        
+    var_dump($_SESSION['products']);
     ?>
 
     <div class="totalProducts">

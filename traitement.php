@@ -19,7 +19,11 @@ if(isset($_POST['submit'])){ //SI les données ajouté avec le bouton submit son
         $_SESSION['products'][] = $product; //On va pouvoir stocker le tableau product vide dans la session, et quand des données sont envoyés et traité par les filtres, alors on remplira le teableau de la session ainsi les produits ajouté sont stocké dans la session
     }
 }
-
+/*
+ function function_alert($message) {
+    echo "<script>alert('$message');</script>";
+ }
+*/
 /*
         $product['name'][$name] = $product['name'][$name] + $qtt;
 
@@ -32,22 +36,21 @@ if(isset($_POST['submit'])){ //SI les données ajouté avec le bouton submit son
 if(isset($_GET['action'])){
     switch($_GET['action']){
         case "delete":
-            if(isset($_SESSION['products'])){
-            unset($_SESSION['products'][$_GET['id']]);};
-            echo '<script>alert("Article supprimé")</script>';
+            if(isset($_SESSION['products'])) unset($_SESSION['products'][$_GET['id']]);
             header("Location:recap.php");
             exit();
-            break;
         case "clear":
-            unset($_SESSION['products']);
-            echo '<script>alert("Liste supprimé")</script>';
-            break;
+            if(isset($_SESSION['products'])) unset($_SESSION['products']);
+            header("Location:recap.php");
+            exit();
         case "qtt-up":
-            
-            break;
+            if(isset($_SESSION['products'])) $_SESSION['products'][$_GET['id']][$qtt]++;
+            header("Location:recap.php");
+            exit();
         case "qtt-down":
-
-            break;
+            if(isset($_SESSION['products']))$_SESSION['products'][$_GET['id']][$qtt]--;
+            header("Location:recap.php");
+            exit();
     }
 }
 
