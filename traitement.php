@@ -16,7 +16,10 @@ function qttUp() { //On crée la fonction qui permettra d'augmenter la quantité
 }
 
 function qttDown() { //On crée la fonction qui permettra de diminuer la quantité de la ligne correspondante
-    if(isset($_SESSION['products'])) $_SESSION['products'][$_GET['id']]['qtt']--; //SI le tableau a des variables déclarée et différent de null, ALORS On va chercher la valeur quantité (qtt) du produit avec l'ID correspondant ($_GET ID) du tableau (products) de la session pour la diminuer de 1 (--)
+    if(isset($_SESSION['products'])) {  //SI le tableau a des variables déclarée et différent de null
+        if($_SESSION['products'][$_GET['id']]['qtt'] >0) //SI la quantié du produit avec l'ID récupéré sur la page rêquette est supréieur ou égal à 1 
+            $_SESSION['products'][$_GET['id']]['qtt']--; //ALORS On va chercher la valeur quantité (qtt) du produit avec l'ID correspondant ($_GET ID) du tableau (products) de la session pour la diminuer de 1 (--)
+    }
     ($_SESSION['products'][$_GET['id']]['total'] = $_SESSION['products'][$_GET['id']]['price'] * $_SESSION['products'][$_GET['id']]['qtt']);
 }
 
@@ -57,6 +60,9 @@ if(isset($_GET['action'])){ // SI la superglobale (GET) est une variable différ
         case "qtt-down":
             qttDown();
             header("Location:recap.php");
+            exit();
+        case "default":
+            header("Location:index.php");
             exit();
     }
 }
