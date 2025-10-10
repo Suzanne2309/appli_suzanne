@@ -1,4 +1,5 @@
 ----------------------- Projet Application Web – Panier en PHP -----------------------
+
 📌 Contexte
 
 Ce projet a été réalisé dans le cadre de ma formation en développement web, pour approfondir mes connaissances en PHP et découvrir la gestion des sessions et des superglobales.
