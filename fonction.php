@@ -1,10 +1,6 @@
     <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-function totalProducts(): int {
-    if (empty($_SESSION['products']) || !is_array($_SESSION['products'])) {
+function totalProducts() {
+    if (empty($_SESSION['products']) || !is_array($_SESSION['products'])) { 
         return 0;
     }
 
